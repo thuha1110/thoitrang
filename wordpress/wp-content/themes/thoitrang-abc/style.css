@@ -52,7 +52,60 @@ header {
 
 .menu { display: flex; gap: 18px; flex-wrap: wrap; font-weight: 600; }
 
-.hero { background: linear-gradient(120deg, #fdf2f5, #ffffff); padding: 60px 0; }
+.hero {
+  padding: 0;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 24px 0 0;
+  background: #fdf2f5;
+}
+
+.slides {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.slide {
+  scroll-snap-align: start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 36px;
+  align-items: center;
+}
+
+.slide h1 { font-size: 32px; margin: 0; }
+
+.slide p { color: var(--muted); }
+
+.slide img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  min-height: 240px;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 12px 0 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
 
 .hero-content { display: grid; gap: 16px; max-width: 520px; }
 
@@ -71,7 +124,19 @@ header {
 
 .grid-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 
-.card { border: 1px solid #f1f1f1; border-radius: 12px; padding: 16px; background: #fff; }
+.card { border: 1px solid #f1f1f1; border-radius: 16px; padding: 18px; background: #fff; box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+
+.category-card {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-height: 120px;
+}
+
+.category-card span {
+  color: var(--muted);
+  font-size: 13px;
+}
 
 .footer { background: #111827; color: #fff; padding: 30px 0; margin-top: 40px; }
 
